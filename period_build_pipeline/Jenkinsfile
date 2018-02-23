@@ -1,0 +1,9 @@
+node {
+
+    stage("WOO") {
+
+        sh("echo WOO")
+
+    }
+
+}
