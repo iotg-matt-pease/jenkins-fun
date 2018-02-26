@@ -1,6 +1,11 @@
 pipeline {
-    agent {
-        sh 'echo "WOO"'
+    agent any
+
+    stages {
+
+        stage('Example shell script') {
+            sh 'echo "WOO"'
+        }
     }
 
 }
