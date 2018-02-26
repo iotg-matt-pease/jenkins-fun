@@ -1,7 +1,9 @@
 pipeline {
     agent any
 
-    lock(resource: 'try_something')
+    lock {
+        resource: 'try_something'
+    }
 
     environment {
 
@@ -13,7 +15,9 @@ pipeline {
         cron('H/2 * * * *')
     }
 
-    script(def result = 'YES')
+    script{
+        def result = 'YES'
+    }
 
     stages {
 
