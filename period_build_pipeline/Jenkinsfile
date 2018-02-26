@@ -1,5 +1,6 @@
 pipeline {
-
-    sh 'echo "WOO"'
+    agent {
+        sh 'echo "WOO"'
+    }
 
 }
