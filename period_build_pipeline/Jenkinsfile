@@ -1,11 +1,5 @@
-node {
+pipeline {
 
-    properties(pipelineTriggers([[$class: "TimerTrigger", spec: "* 1 * * *"]]))
-
-    stage("WOO") {
-
-        sh("echo WOO")
-
-    }
+    sh 'echo "WOO"'
 
 }
