@@ -4,7 +4,9 @@ pipeline {
     stages {
 
         stage('Example shell script') {
-            sh 'echo "WOO"'
+            steps {
+                sh 'echo "WOO"'
+            }
         }
     }
 
