@@ -15,6 +15,19 @@ pipeline {
 
     stages {
 
+        stage('Give a choice') {
+            steps {
+                 script {
+                    result = input(message: 'Choose the playbooks to run', parameters: [
+                        booleanParam(defaultValue: true, description: '', name: 'backend_services'),
+                        booleanParam(defaultValue: true, description: '', name: 'archivist_and_database_setup'),
+                        booleanParam(defaultValue: true, description: '', name: 'self_serve'),
+                        booleanParam(defaultValue: true, description: '', name: 'remaining')
+                    ])
+                 }
+            }
+        }
+
         stage('Example shell script') {
             steps {
                 sh 'echo "WOO"'
