@@ -1,3 +1,5 @@
+def result = 'YES'
+
 pipeline {
     agent any
 
@@ -15,11 +17,6 @@ pipeline {
 
         stage('Example shell script') {
             steps {
-
-                script {
-                    def result = 'YES'
-                }
-
                 sh 'echo "WOO"'
                 echo "The result is " + result
                 echo "The result also is ${result}"
