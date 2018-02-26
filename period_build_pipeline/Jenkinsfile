@@ -21,8 +21,8 @@ pipeline {
                 }
 
                 sh 'echo "WOO"'
-                sh "echo " + result
-                sh "echo " + env.FOO
+                sh "echo ${result}"
+                sh "echo ${FOO}"
             }
         }
     }
