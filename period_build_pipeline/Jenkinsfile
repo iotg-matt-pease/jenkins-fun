@@ -1,15 +1,26 @@
 pipeline {
     agent any
 
+    lock(resource: 'try_something')
+
+    environment {
+
+        FOO = "BAR"
+
+    }
+
     triggers {
         cron('H/2 * * * *')
     }
+
+    script(def result = 'YES')
 
     stages {
 
         stage('Example shell script') {
             steps {
                 sh 'echo "WOO"'
+                sh "echo $result"
             }
         }
     }
