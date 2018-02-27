@@ -20,7 +20,7 @@ pipeline {
     stages {
 
         stage('Give a choice') {
-            when { expression { return not params.override_prompts } }
+            when { expression { return !params.override_prompts } }
             steps {
                  script {
                     result = input(message: 'Choose the playbooks to run', parameters: [
