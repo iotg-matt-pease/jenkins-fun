@@ -13,9 +13,14 @@ pipeline {
         cron('H/2 * * * *')
     }
 
+    parameters {
+        booleanParam(defaultValue: true, description: '', name: 'override_prompts')
+    }
+
     stages {
 
         stage('Give a choice') {
+            when { not expression { return params.override_prompts } }
             steps {
                  script {
                     result = input(message: 'Choose the playbooks to run', parameters: [
