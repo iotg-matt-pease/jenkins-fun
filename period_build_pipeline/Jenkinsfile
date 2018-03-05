@@ -35,6 +35,19 @@ pipeline {
 
         stage('Example shell script') {
             steps {
+                script {
+
+                    if ("${result.backend_services}" == "true") {
+
+                        echo "backend_services is true!"
+
+                    } else {
+
+                        echo "Skipping running backend services playbooks"
+
+                    }
+
+                }
                 sh 'echo "WOO"'
                 echo "The result is " + result
                 echo "The result also is ${result}"
