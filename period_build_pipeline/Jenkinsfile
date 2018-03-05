@@ -35,9 +35,12 @@ pipeline {
 
         stage('Example shell script') {
             steps {
+
+
+
                 script {
 
-                    if ("params.override_prompts" == "true") or ("${result.backend_services}" == "true") {
+                    if ("${params.override_prompts}" == "true") or ("${result.backend_services}" == "true") {
 
                         echo "backend_services is true!"
 
