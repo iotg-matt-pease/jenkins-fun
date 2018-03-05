@@ -36,7 +36,7 @@ pipeline {
         stage('Example shell script') {
             steps {
 
-
+                echo "${params.override_prompts}"
 
                 script {
 
